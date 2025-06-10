@@ -1,4 +1,4 @@
-package org.example.MyCodes;
+package org.example.filtersInJava8;
 
 import java.util.Arrays;
 import java.util.List;
