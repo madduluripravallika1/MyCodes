@@ -3,6 +3,7 @@ package org.example.Top50CodingQuestions;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 class Student{
@@ -39,7 +40,16 @@ class Student{
      public void setGrade(double grade) {
          this.grade = grade;
      }
- }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "sname='" + sname + '\'' +
+                ", cource='" + cource + '\'' +
+                ", grade=" + grade +
+                '}';
+    }
+}
 public class AverageGradeOfStudents {
     public static void main(String[] args) {
         List<Student> myStudents = new ArrayList<>();
@@ -50,9 +60,9 @@ public class AverageGradeOfStudents {
         myStudents.add(new Student("Mohan", "ECE", 69.8));
         myStudents.add(new Student("Latha", "EEE", 88.2));
 
-        Map<String,Double> myValues=myStudents.stream()
-                .collect(Collectors.groupingBy(Student::getCource,Collectors.summingDouble(Student::getGrade)));
-        System.out.println(myValues);
+        Map<String, Double> myValues=myStudents.stream()
+                .collect(Collectors.groupingBy(Student::getCource,Collectors.averagingDouble(Student::getGrade)));
+        System.out.println(myValues.toString());
     }
 
     }

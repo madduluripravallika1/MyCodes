@@ -1,3 +1,4 @@
+/*
 package org.example.Top50CodingQuestions;
 
 import java.util.Arrays;
@@ -14,3 +15,4 @@ public class AverageOfAllNumbers {
         System.out.println(myValues);
     }
 }
+*/
